@@ -7,13 +7,10 @@
   <title>Diagnóstico da Troca | Descubra o padrão que te faz perder dinheiro e energia</title>
   <meta name="description" content="Responda o Diagnóstico da Troca (assinalar apenas) e envie para o WhatsApp. Você recebe sua devolutiva personalizada após o envio." />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Diagnóstico da Troca" />
   <meta property="og:description" content="Responda e envie para o WhatsApp. A devolutiva só é entregue após o envio completo." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://via.placeholder.com/1200x630" />
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -32,13 +29,10 @@
       --shadow: 0 14px 34px rgba(15,23,42,.08);
       --radius: 18px;
     }
-
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--ink)}
     a{text-decoration:none}
     img{max-width:100%;display:block}
-
-    /* Acessibilidade: foco visível */
     :focus-visible{outline:3px solid rgba(124,58,237,.35); outline-offset:3px}
 
     .topbar{
@@ -150,25 +144,13 @@
     .grid2{display:grid;gap:14px}
     @media(min-width:900px){ .grid2{grid-template-columns:1fr 1fr; gap:18px;} }
 
-    .h2{
-      margin:0 0 10px;
-      font-size:22px;
-      font-weight:900;
-    }
+    .h2{margin:0 0 10px;font-size:22px;font-weight:900}
     .p{margin:0;color:var(--soft);font-size:16px}
     .mini{margin-top:8px;color:var(--soft);font-size:14px}
 
-    .steps{
-      display:grid; gap:12px;
-      margin-top:12px;
-    }
+    .steps{display:grid; gap:12px;margin-top:12px;}
     @media(min-width:900px){ .steps{grid-template-columns:repeat(3,1fr)} }
-    .step{
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:16px;
-      background:#fff;
-    }
+    .step{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff;}
     .stepNum{
       width:34px;height:34px;border-radius:12px;
       display:grid;place-items:center;
@@ -180,7 +162,6 @@
     .step h3{margin:0 0 6px;font-size:16px}
     .step p{margin:0;color:var(--soft);font-size:14px}
 
-    /* Form */
     form{margin-top:10px}
     .formTitle{
       display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
@@ -209,6 +190,7 @@
     }
 
     .checklist{display:grid;gap:10px}
+
     .item{
       border:1px solid var(--line);
       border-radius:14px;
@@ -267,7 +249,6 @@
       font-size:13px;
     }
 
-    /* Sticky CTA no mobile */
     .sticky{
       position:fixed;left:0;right:0;bottom:0;
       background:rgba(248,250,252,.92);
@@ -311,7 +292,7 @@
         <ul class="heroList" aria-label="Benefícios">
           <li><span class="check" aria-hidden="true">✓</span><span><strong>Sem texto para digitar:</strong> apenas marcar opções.</span></li>
           <li><span class="check" aria-hidden="true">✓</span><span><strong>Sem resultado automático:</strong> a devolutiva é feita por você no WhatsApp.</span></li>
-          <li><span class="check" aria-hidden="true">✓</span><span><strong>Envio só completo:</strong> o botão só libera quando tudo for marcado.</span></li>
+          <li><span class="check" aria-hidden="true">✓</span><span><strong>Envio só completo:</strong> o botão só libera quando estiver completo.</span></li>
         </ul>
       </div>
 
@@ -336,13 +317,13 @@
       <div class="steps">
         <div class="step">
           <div class="stepNum">1</div>
-          <h3>Assinale todas as perguntas</h3>
-          <p>O formulário só pode ser enviado quando você marcar todos os itens obrigatórios.</p>
+          <h3>Assinale tudo</h3>
+          <p>Agora é 1 alternativa por bloco. O envio só libera quando os 5 blocos tiverem 1 escolha.</p>
         </div>
         <div class="step">
           <div class="stepNum">2</div>
           <h3>Envie pelo WhatsApp</h3>
-          <p>Ao enviar, abre uma mensagem pronta com suas marcações para você me encaminhar.</p>
+          <p>Ao enviar, abre uma mensagem pronta com suas escolhas para você me encaminhar.</p>
         </div>
         <div class="step">
           <div class="stepNum">3</div>
@@ -355,96 +336,97 @@
     <section class="section" id="diagnostico" aria-label="Formulário do Diagnóstico">
       <div class="formTitle">
         <h2 class="h2">Responda o Diagnóstico</h2>
-        <span class="tag">Somente assinalar</span>
+        <span class="tag">1 alternativa por bloco</span>
       </div>
-      <p class="p">Marque todas as opções abaixo. O envio só libera quando estiver completo.</p>
+      <p class="p">Escolha uma alternativa em cada bloco. O envio só libera quando estiver completo.</p>
 
       <form id="diagForm">
-        <!-- 1) Dinheiro -->
+        <!-- 1) Dinheiro (1 escolha) -->
         <div class="fieldset">
-          <div class="legend">1️⃣ No dinheiro</div>
+          <div class="legend">1️⃣ No dinheiro (escolha 1)</div>
 
           <div class="checklist">
-            <div class="item">
-              <input type="checkbox" id="d1" name="dinheiro" value="Entrego além do combinado" required>
+            <label class="item">
+              <input type="radio" name="dinheiro1" value="Eu entrego além do combinado" required>
               <div>
-                <label for="d1">Eu entrego além do combinado?</label>
+                <div style="font-weight:900;">Eu entrego além do combinado?</div>
                 <div class="sub">Quando passa do combinado, sua energia fica “sem preço”.</div>
               </div>
-            </div>
+            </label>
 
-            <div class="item">
-              <input type="checkbox" id="d2" name="dinheiro" value="Tenho dificuldade de cobrar" required>
+            <label class="item">
+              <input type="radio" name="dinheiro1" value="Eu tenho dificuldade de cobrar" required>
               <div>
-                <label for="d2">Eu tenho dificuldade de cobrar?</label>
+                <div style="font-weight:900;">Eu tenho dificuldade de cobrar?</div>
                 <div class="sub">Cobrar é sustentar valor, não pedir permissão.</div>
               </div>
-            </div>
+            </label>
 
-            <div class="item">
-              <input type="checkbox" id="d3" name="dinheiro" value="Dou desconto por insegurança" required>
+            <label class="item">
+              <input type="radio" name="dinheiro1" value="Eu dou desconto por insegurança" required>
               <div>
-                <label for="d3">Eu dou desconto por insegurança?</label>
+                <div style="font-weight:900;">Eu dou desconto por insegurança?</div>
                 <div class="sub">Desconto por medo enfraquece seu posicionamento.</div>
               </div>
-            </div>
+            </label>
 
-            <div class="item">
-              <input type="checkbox" id="d4" name="dinheiro" value="Sinto culpa quando ganho bem" required>
+            <label class="item">
+              <input type="radio" name="dinheiro1" value="Eu me sinto culpado quando ganho bem" required>
               <div>
-                <label for="d4">Eu me sinto culpado quando ganho bem?</label>
+                <div style="font-weight:900;">Eu me sinto culpado quando ganho bem?</div>
                 <div class="sub">Culpa pode virar “teto” de prosperidade.</div>
               </div>
-            </div>
+            </label>
           </div>
         </div>
 
-        <!-- 2) Carreira -->
+        <!-- 2) Carreira (1 escolha) -->
         <div class="fieldset">
-          <div class="legend">2️⃣ Na carreira</div>
+          <div class="legend">2️⃣ Na carreira (escolha 1)</div>
 
           <div class="checklist">
-            <div class="item">
-              <input type="checkbox" id="c1" name="carreira" value="Assumo responsabilidades que não são minhas" required>
+            <label class="item">
+              <input type="radio" name="carreira1" value="Eu assumo responsabilidades que não são minhas" required>
               <div>
-                <label for="c1">Eu assumo responsabilidades que não são minhas?</label>
+                <div style="font-weight:900;">Eu assumo responsabilidades que não são minhas?</div>
                 <div class="sub">Carregar o que não é seu vira sobrecarga e ressentimento.</div>
               </div>
-            </div>
+            </label>
 
-            <div class="item">
-              <input type="checkbox" id="c2" name="carreira" value="Centralizo" required>
+            <label class="item">
+              <input type="radio" name="carreira1" value="Eu centralizo" required>
               <div>
-                <label for="c2">Eu centralizo?</label>
+                <div style="font-weight:900;">Eu centralizo?</div>
                 <div class="sub">Quando tudo depende de você, o custo é alto.</div>
               </div>
-            </div>
+            </label>
 
-            <div class="item">
-              <input type="checkbox" id="c3" name="carreira" value="Sinto-me sobrecarregado" required>
+            <label class="item">
+              <input type="radio" name="carreira1" value="Eu me sinto sobrecarregado" required>
               <div>
-                <label for="c3">Eu me sinto sobrecarregado?</label>
+                <div style="font-weight:900;">Eu me sinto sobrecarregado?</div>
                 <div class="sub">Sinal de limite frágil ou acordos mal feitos.</div>
               </div>
-            </div>
+            </label>
 
-            <div class="item">
-              <input type="checkbox" id="c4" name="carreira" value="Acho que só eu faço direito" required>
+            <label class="item">
+              <input type="radio" name="carreira1" value="Eu acho que só eu faço direito" required>
               <div>
-                <label for="c4">Eu acho que só eu faço direito?</label>
+                <div style="font-weight:900;">Eu acho que só eu faço direito?</div>
                 <div class="sub">Perfeccionismo pode esconder medo de confiar/delegar.</div>
               </div>
-            </div>
+            </label>
           </div>
         </div>
 
-        <!-- 3) Merecimento (apenas assinalar) -->
+        <!-- 3) Merecimento (3 escolhas, 1 em cada) -->
         <div class="fieldset">
-          <div class="legend">3️⃣ No merecimento (assinale 1 opção em cada)</div>
+          <div class="legend">3️⃣ No merecimento (1 em cada pergunta)</div>
 
           <div class="checklist">
             <div class="item" style="flex-direction:column; align-items:stretch;">
               <div style="font-weight:900;">Se eu ganhar mais dinheiro, então…</div>
+
               <label class="item" style="margin-top:10px;">
                 <input type="radio" name="m1" value="Vou ter mais responsabilidade e cobrança" required>
                 <div>Vou ter mais responsabilidade e cobrança</div>
@@ -465,6 +447,7 @@
 
             <div class="item" style="flex-direction:column; align-items:stretch;">
               <div style="font-weight:900;">Se eu cobrar mais caro, as pessoas vão…</div>
+
               <label class="item" style="margin-top:10px;">
                 <input type="radio" name="m2" value="Me abandonar / procurar mais barato" required>
                 <div>Me abandonar / procurar mais barato</div>
@@ -485,6 +468,7 @@
 
             <div class="item" style="flex-direction:column; align-items:stretch;">
               <div style="font-weight:900;">Eu só mereço prosperar quando…</div>
+
               <label class="item" style="margin-top:10px;">
                 <input type="radio" name="m3" value="Eu sofrer e me sacrificar muito" required>
                 <div>Eu sofrer e me sacrificar muito</div>
@@ -510,7 +494,7 @@
         </div>
 
         <div class="error" id="errorBox" role="alert" aria-live="polite">
-          Para enviar, marque <strong>todas</strong> as opções obrigatórias (incluindo 1 opção em cada pergunta de merecimento).
+          Para enviar, selecione <strong>1 alternativa</strong> em Dinheiro, <strong>1</strong> em Carreira e <strong>1</strong> em cada pergunta do Merecimento.
         </div>
 
         <div class="ctaRow" style="margin-top:14px;">
@@ -520,30 +504,6 @@
           <a class="btn btnGhost" href="#como-funciona">Rever como funciona</a>
         </div>
       </form>
-    </section>
-
-    <section class="section" aria-label="Benefícios">
-      <div class="grid2">
-        <div>
-          <h2 class="h2">O que você ganha com isso</h2>
-          <p class="p">
-            Clareza sobre onde você está se excedendo, se diminuindo ou se sabotando — para ajustar acordos,
-            preço, limites e posicionamento com mais firmeza.
-          </p>
-          <p class="mini">
-            Você não precisa “se consertar”. Você precisa <strong>ver o padrão</strong> para escolher diferente.
-          </p>
-        </div>
-        <div class="heroCard">
-          <div style="font-weight:900;margin-bottom:10px;">Devolutiva no WhatsApp</div>
-          <div class="mini">Você envia suas marcações e eu te devolvo:</div>
-          <ul class="heroList" style="margin-top:10px;">
-            <li><span class="check" aria-hidden="true">✓</span><span>o padrão central que aparece</span></li>
-            <li><span class="check" aria-hidden="true">✓</span><span>o “custo oculto” na troca</span></li>
-            <li><span class="check" aria-hidden="true">✓</span><span>um próximo passo objetivo</span></li>
-          </ul>
-        </div>
-      </div>
     </section>
 
     <section class="section" aria-label="Chamada final">
@@ -563,7 +523,6 @@
     </footer>
   </main>
 
-  <!-- Sticky WhatsApp CTA (mobile) -->
   <div class="sticky" aria-label="Ação rápida">
     <a class="btnWhats" href="#diagnostico">
       <svg class="waIcon" viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M20.5 3.5A10 10 0 0 0 3.2 17.7L2 22l4.4-1.2A10 10 0 1 0 20.5 3.5Zm-8.4 2.2c4.1 0 7.4 3.3 7.4 7.4a7.4 7.4 0 0 1-10.1 6.8l-.3-.1-2.6.7.7-2.5-.1-.3a7.4 7.4 0 0 1 5-11.9Zm4.2 9.8c-.2.6-1.1 1-1.5 1.1-.4.1-.9.1-1.5 0s-1.5-.5-2.6-1.1c-1-.6-1.8-1.6-2.1-2.1-.3-.5-.5-1.3-.1-1.9.2-.3.5-.8.8-.8h.6c.1 0 .4-.1.6.5.2.6.8 2 .9 2.2.1.2.1.4 0 .6s-.2.4-.4.6c-.2.2-.4.4-.2.7.2.3.9 1.4 2.1 2 .9.5 1.6.6 1.9.4.3-.2.4-.5.6-.8.2-.3.5-.4.8-.3l1.9.9c.3.1.5.3.6.5Z"/></svg>
@@ -572,35 +531,24 @@
   </div>
 
   <script>
-    // ====== CONFIGURE AQUI ======
-    const WHATSAPP_NUMBER = "SEU_NUMERO"; // Ex: "5549998110445"
-    // ============================
+    // WhatsApp no formato internacional (Brasil = 55)
+    const WHATSAPP_NUMBER = "5549998110445";
 
     const form = document.getElementById('diagForm');
     const errorBox = document.getElementById('errorBox');
 
-    function getCheckedValues(name){
-      return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(i => i.value);
-    }
     function getRadioValue(name){
       const el = document.querySelector(`input[name="${name}"]:checked`);
       return el ? el.value : "";
     }
 
     function validateAllRequired(){
-      // checkboxes required (todos marcados): dinheiro 4 + carreira 4
-      const dinheiro = document.querySelectorAll('input[name="dinheiro"]');
-      const carreira  = document.querySelectorAll('input[name="carreira"]');
-
-      const allDinheiroChecked = Array.from(dinheiro).every(i => i.checked);
-      const allCarreiraChecked = Array.from(carreira).every(i => i.checked);
-
-      // radios required: m1, m2, m3 (1 em cada)
+      const dinheiro = !!getRadioValue('dinheiro1');
+      const carreira = !!getRadioValue('carreira1');
       const m1 = !!getRadioValue('m1');
       const m2 = !!getRadioValue('m2');
       const m3 = !!getRadioValue('m3');
-
-      return allDinheiroChecked && allCarreiraChecked && m1 && m2 && m3;
+      return dinheiro && carreira && m1 && m2 && m3;
     }
 
     form.addEventListener('submit', (e) => {
@@ -613,8 +561,8 @@
       }
       errorBox.style.display = 'none';
 
-      const dinheiro = getCheckedValues('dinheiro');
-      const carreira = getCheckedValues('carreira');
+      const dinheiro = getRadioValue('dinheiro1');
+      const carreira = getRadioValue('carreira1');
       const m1 = getRadioValue('m1');
       const m2 = getRadioValue('m2');
       const m3 = getRadioValue('m3');
@@ -622,11 +570,11 @@
       const msg =
 `Olá! Preenchi o *Diagnóstico da Troca* e quero minha devolutiva.
 
-*1) No dinheiro (marquei todos):*
-- ${dinheiro.join('\n- ')}
+*1) No dinheiro (minha escolha):*
+- ${dinheiro}
 
-*2) Na carreira (marquei todos):*
-- ${carreira.join('\n- ')}
+*2) Na carreira (minha escolha):*
+- ${carreira}
 
 *3) No merecimento (minhas escolhas):*
 - Se eu ganhar mais dinheiro, então: ${m1}
