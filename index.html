@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Diagnóstico da Troca | Dinheiro, Carreira e Merecimento</title>
+  <meta name="description" content="Faça o Diagnóstico da Troca e identifique padrões no dinheiro, carreira e merecimento. Reflexão profunda para transformar sua relação com prosperidade." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Diagnóstico da Troca" />
+  <meta property="og:description" content="Descubra padrões ocultos na sua forma de trocar energia por dinheiro e reconhecimento." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#7C3AED;
+      --primary-light:#EDE9FE;
+      --accent:#10B981;
+      --text:#111827;
+      --soft:#6B7280;
+      --bg:#F9FAFB;
+      --white:#FFFFFF;
+      --border:#E5E7EB;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    .container{
+      max-width:900px;
+      margin:auto;
+      padding:40px 20px;
+    }
+
+    h1{
+      font-size:clamp(28px,5vw,42px);
+      font-weight:800;
+      text-align:center;
+      margin-bottom:16px;
+      background:linear-gradient(90deg,var(--primary),var(--accent));
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+
+    .intro{
+      text-align:center;
+      color:var(--soft);
+      margin-bottom:40px;
+      font-size:18px;
+    }
+
+    .card{
+      background:var(--white);
+      padding:28px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      margin-bottom:28px;
+      box-shadow:0 10px 25px rgba(0,0,0,.04);
+    }
+
+    h2{
+      font-size:22px;
+      margin-bottom:18px;
+      font-weight:700;
+      color:var(--primary);
+    }
+
+    .check-group label{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      margin-bottom:14px;
+      cursor:pointer;
+      font-size:16px;
+    }
+
+    input[type="checkbox"]{
+      accent-color:var(--primary);
+      margin-top:4px;
+      width:18px;
+      height:18px;
+    }
+
+    .fill-group{
+      margin-bottom:18px;
+    }
+
+    .fill-group p{
+      margin-bottom:6px;
+      font-weight:600;
+    }
+
+    input[type="text"]{
+      width:100%;
+      padding:12px;
+      border-radius:10px;
+      border:1px solid var(--border);
+      font-size:15px;
+    }
+
+    input[type="text"]:focus{
+      outline:none;
+      border-color:var(--primary);
+      box-shadow:0 0 0 3px var(--primary-light);
+    }
+
+    .cta{
+      text-align:center;
+      margin-top:20px;
+    }
+
+    .btn{
+      background:var(--primary);
+      color:#fff;
+      padding:14px 24px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:600;
+      display:inline-block;
+      transition:.3s;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 20px rgba(124,58,237,.25);
+    }
+
+    footer{
+      text-align:center;
+      margin-top:40px;
+      color:var(--soft);
+      font-size:14px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Diagnóstico da Troca</h1>
+
+    <p class="intro">
+      Responda com sinceridade. O objetivo é revelar padrões invisíveis na sua relação com dinheiro, carreira e merecimento.
+    </p>
+
+    <!-- DINHEIRO -->
+    <div class="card">
+      <h2>1️⃣ No Dinheiro</h2>
+      <div class="check-group">
+        <label><input type="checkbox"> Eu entrego além do combinado?</label>
+        <label><input type="checkbox"> Eu tenho dificuldade de cobrar?</label>
+        <label><input type="checkbox"> Eu dou desconto por insegurança?</label>
+        <label><input type="checkbox"> Eu me sinto culpado quando ganho bem?</label>
+      </div>
+    </div>
+
+    <!-- CARREIRA -->
+    <div class="card">
+      <h2>2️⃣ Na Carreira</h2>
+      <div class="check-group">
+        <label><input type="checkbox"> Eu assumo responsabilidades que não são minhas?</label>
+        <label><input type="checkbox"> Eu centralizo?</label>
+        <label><input type="checkbox"> Eu me sinto sobrecarregado?</label>
+        <label><input type="checkbox"> Eu acho que só eu faço direito?</label>
+      </div>
+    </div>
+
+    <!-- MERECIMENTO -->
+    <div class="card">
+      <h2>3️⃣ No Merecimento</h2>
+
+      <div class="fill-group">
+        <p>“Se eu ganhar mais dinheiro, então ______.”</p>
+        <input type="text" placeholder="Complete aqui..." />
+      </div>
+
+      <div class="fill-group">
+        <p>“Se eu cobrar mais caro, as pessoas vão ______.”</p>
+        <input type="text" placeholder="Complete aqui..." />
+      </div>
+
+      <div class="fill-group">
+        <p>“Eu só mereço prosperar quando ___.”</p>
+        <input type="text" placeholder="Complete aqui..." />
+      </div>
+
+    </div>
+
+    <div class="cta">
+      <a href="#" class="btn">Finalizar Reflexão</a>
+    </div>
+
+    <footer>
+      © 2026 — Diagnóstico da Troca. Todos os direitos reservados.
+    </footer>
+
+  </div>
+
+</body>
+</html>
