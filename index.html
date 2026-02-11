@@ -4,209 +4,641 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Diagnóstico da Troca | Dinheiro, Carreira e Merecimento</title>
-  <meta name="description" content="Faça o Diagnóstico da Troca e identifique padrões no dinheiro, carreira e merecimento. Reflexão profunda para transformar sua relação com prosperidade." />
+  <title>Diagnóstico da Troca | Descubra o padrão que te faz perder dinheiro e energia</title>
+  <meta name="description" content="Responda o Diagnóstico da Troca (assinalar apenas) e envie para o WhatsApp. Você recebe sua devolutiva personalizada após o envio." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Diagnóstico da Troca" />
-  <meta property="og:description" content="Descubra padrões ocultos na sua forma de trocar energia por dinheiro e reconhecimento." />
+  <meta property="og:description" content="Responda e envie para o WhatsApp. A devolutiva só é entregue após o envio completo." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://via.placeholder.com/1200x630" />
 
-  <!-- Google Font -->
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --primary:#7C3AED;
-      --primary-light:#EDE9FE;
-      --accent:#10B981;
-      --text:#111827;
-      --soft:#6B7280;
-      --bg:#F9FAFB;
-      --white:#FFFFFF;
-      --border:#E5E7EB;
+      --primary2:#10B981;
+      --ink:#0F172A;
+      --soft:#667085;
+      --bg:#F8FAFC;
+      --card:#FFFFFF;
+      --line:#E5E7EB;
+      --warn:#EF4444;
+      --ok:#16A34A;
+      --shadow: 0 14px 34px rgba(15,23,42,.08);
+      --radius: 18px;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:'Inter',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--ink)}
+    a{text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Acessibilidade: foco visível */
+    :focus-visible{outline:3px solid rgba(124,58,237,.35); outline-offset:3px}
+
+    .topbar{
+      background:linear-gradient(90deg,var(--primary),var(--primary2));
+      color:#fff;
+      padding:12px 16px;
+      text-align:center;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      font-size:14px;
     }
 
-    .container{
-      max-width:900px;
-      margin:auto;
-      padding:40px 20px;
+    .wrap{max-width:1100px;margin:0 auto;padding:28px 18px}
+
+    .hero{
+      display:grid;
+      gap:18px;
+      align-items:center;
+      grid-template-columns:1fr;
+      padding:26px 0 6px;
     }
+    @media(min-width:900px){
+      .hero{grid-template-columns:1.1fr .9fr; gap:26px; padding:44px 0 18px;}
+    }
+
+    .badge{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      background:#fff;
+      border:1px solid var(--line);
+      padding:10px 12px;
+      border-radius:999px;
+      width:max-content;
+      box-shadow:0 8px 18px rgba(0,0,0,.04);
+      color:var(--soft);
+      font-size:13px;
+      font-weight:700;
+    }
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--primary2)}
 
     h1{
-      font-size:clamp(28px,5vw,42px);
+      font-size:clamp(28px,4.5vw,46px);
+      line-height:1.05;
+      margin:10px 0 10px;
       font-weight:800;
-      text-align:center;
-      margin-bottom:16px;
-      background:linear-gradient(90deg,var(--primary),var(--accent));
-      -webkit-background-clip:text;
-      color:transparent;
+      background:linear-gradient(90deg,var(--primary),var(--primary2));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
     }
-
-    .intro{
-      text-align:center;
+    .lead{
+      margin:0;
       color:var(--soft);
-      margin-bottom:40px;
       font-size:18px;
+      max-width:56ch;
     }
 
-    .card{
-      background:var(--white);
-      padding:28px;
-      border-radius:16px;
-      border:1px solid var(--border);
-      margin-bottom:28px;
-      box-shadow:0 10px 25px rgba(0,0,0,.04);
+    .heroCard{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
     }
-
-    h2{
-      font-size:22px;
-      margin-bottom:18px;
-      font-weight:700;
-      color:var(--primary);
-    }
-
-    .check-group label{
-      display:flex;
-      align-items:flex-start;
+    .heroList{
+      margin:10px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
       gap:10px;
-      margin-bottom:14px;
+    }
+    .heroList li{
+      display:flex; gap:10px; align-items:flex-start;
+      color:var(--soft);
+      font-size:15px;
+    }
+    .check{
+      flex:0 0 auto;
+      width:22px;height:22px;border-radius:6px;
+      background:rgba(16,185,129,.12);
+      display:grid;place-items:center;
+      color:var(--ok);
+      font-weight:900;
+      margin-top:1px;
+    }
+
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:14px 18px;border-radius:14px;font-weight:800;
+      border:1px solid transparent;
       cursor:pointer;
+      transition:.2s ease;
+      box-shadow:0 10px 22px rgba(0,0,0,.06);
+    }
+    .btnPrimary{background:var(--primary); color:#fff}
+    .btnPrimary:hover{transform:translateY(-1px); filter:brightness(1.03)}
+    .btnGhost{background:#fff; border-color:var(--line); color:var(--ink)}
+    .btnGhost:hover{transform:translateY(-1px)}
+
+    .section{
+      margin:18px 0;
+      padding:22px;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:0 10px 26px rgba(15,23,42,.05);
+    }
+    .grid2{display:grid;gap:14px}
+    @media(min-width:900px){ .grid2{grid-template-columns:1fr 1fr; gap:18px;} }
+
+    .h2{
+      margin:0 0 10px;
+      font-size:22px;
+      font-weight:900;
+    }
+    .p{margin:0;color:var(--soft);font-size:16px}
+    .mini{margin-top:8px;color:var(--soft);font-size:14px}
+
+    .steps{
+      display:grid; gap:12px;
+      margin-top:12px;
+    }
+    @media(min-width:900px){ .steps{grid-template-columns:repeat(3,1fr)} }
+    .step{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+      background:#fff;
+    }
+    .stepNum{
+      width:34px;height:34px;border-radius:12px;
+      display:grid;place-items:center;
+      background:rgba(124,58,237,.12);
+      color:var(--primary);
+      font-weight:900;
+      margin-bottom:10px;
+    }
+    .step h3{margin:0 0 6px;font-size:16px}
+    .step p{margin:0;color:var(--soft);font-size:14px}
+
+    /* Form */
+    form{margin-top:10px}
+    .formTitle{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+    .tag{
+      background:rgba(124,58,237,.10);
+      color:var(--primary);
+      border:1px solid rgba(124,58,237,.18);
+      padding:6px 10px;border-radius:999px;
+      font-weight:800;font-size:12px;
+    }
+
+    .fieldset{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+      margin:12px 0;
+      background:#fff;
+    }
+    .legend{
+      font-weight:900;
+      color:var(--primary);
+      margin-bottom:10px;
       font-size:16px;
     }
 
-    input[type="checkbox"]{
+    .checklist{display:grid;gap:10px}
+    .item{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px 12px;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      background:#fff;
+    }
+    .item input{
+      width:18px;height:18px;margin-top:3px;
       accent-color:var(--primary);
+      flex:0 0 auto;
+    }
+    .item label{
+      cursor:pointer;
+      font-weight:700;
+      color:var(--ink);
+      display:block;
+    }
+    .sub{
       margin-top:4px;
-      width:18px;
-      height:18px;
-    }
-
-    .fill-group{
-      margin-bottom:18px;
-    }
-
-    .fill-group p{
-      margin-bottom:6px;
+      color:var(--soft);
+      font-size:13px;
       font-weight:600;
     }
 
-    input[type="text"]{
-      width:100%;
-      padding:12px;
-      border-radius:10px;
-      border:1px solid var(--border);
-      font-size:15px;
-    }
+    .divider{height:1px;background:var(--line);margin:16px 0}
 
-    input[type="text"]:focus{
-      outline:none;
-      border-color:var(--primary);
-      box-shadow:0 0 0 3px var(--primary-light);
-    }
-
-    .cta{
-      text-align:center;
-      margin-top:20px;
-    }
-
-    .btn{
-      background:var(--primary);
+    .error{
+      display:none;
+      margin-top:12px;
       color:#fff;
-      padding:14px 24px;
-      border-radius:12px;
-      text-decoration:none;
-      font-weight:600;
-      display:inline-block;
-      transition:.3s;
+      background:var(--warn);
+      padding:12px 14px;
+      border-radius:14px;
+      font-weight:800;
+      font-size:14px;
     }
 
-    .btn:hover{
-      transform:translateY(-2px);
-      box-shadow:0 10px 20px rgba(124,58,237,.25);
+    .note{
+      margin-top:10px;
+      background:rgba(16,185,129,.10);
+      border:1px solid rgba(16,185,129,.20);
+      padding:12px 14px;
+      border-radius:14px;
+      color:#065F46;
+      font-weight:700;
+      font-size:14px;
     }
 
     footer{
       text-align:center;
-      margin-top:40px;
+      padding:26px 10px 40px;
       color:var(--soft);
-      font-size:14px;
+      font-size:13px;
     }
 
+    /* Sticky CTA no mobile */
+    .sticky{
+      position:fixed;left:0;right:0;bottom:0;
+      background:rgba(248,250,252,.92);
+      backdrop-filter: blur(10px);
+      border-top:1px solid var(--line);
+      padding:10px 12px;
+      display:flex;gap:10px;align-items:center;justify-content:center;
+      z-index:50;
+    }
+    @media(min-width:900px){ .sticky{display:none} }
+
+    .btnWhats{
+      background:#25D366;color:#fff;border-radius:14px;
+      padding:13px 16px;font-weight:900;border:0;
+      display:inline-flex;align-items:center;gap:10px;
+      box-shadow:0 10px 22px rgba(37,211,102,.20);
+    }
+    .btnWhats:hover{filter:brightness(1.03)}
+    .waIcon{width:18px;height:18px;display:inline-block}
   </style>
 </head>
 
 <body>
+  <div class="topbar">Diagnóstico da Troca • Envio pelo WhatsApp • Devolutiva após envio completo</div>
 
-  <div class="container">
+  <main class="wrap">
+    <section class="hero" aria-label="Apresentação">
+      <div>
+        <div class="badge"><span class="dot" aria-hidden="true"></span> Responda em 2–4 minutos (somente assinalar)</div>
+        <h1>O padrão invisível que te faz trocar energia por menos do que você vale.</h1>
+        <p class="lead">
+          Preencha o Diagnóstico da Troca e envie para o meu WhatsApp. Eu analiso suas respostas e te devolvo
+          o que está por trás do seu jeito de cobrar, sustentar limites e receber.
+        </p>
 
-    <h1>Diagnóstico da Troca</h1>
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="#diagnostico">Quero responder agora</a>
+          <a class="btn btnGhost" href="#como-funciona">Como funciona</a>
+        </div>
 
-    <p class="intro">
-      Responda com sinceridade. O objetivo é revelar padrões invisíveis na sua relação com dinheiro, carreira e merecimento.
-    </p>
-
-    <!-- DINHEIRO -->
-    <div class="card">
-      <h2>1️⃣ No Dinheiro</h2>
-      <div class="check-group">
-        <label><input type="checkbox"> Eu entrego além do combinado?</label>
-        <label><input type="checkbox"> Eu tenho dificuldade de cobrar?</label>
-        <label><input type="checkbox"> Eu dou desconto por insegurança?</label>
-        <label><input type="checkbox"> Eu me sinto culpado quando ganho bem?</label>
-      </div>
-    </div>
-
-    <!-- CARREIRA -->
-    <div class="card">
-      <h2>2️⃣ Na Carreira</h2>
-      <div class="check-group">
-        <label><input type="checkbox"> Eu assumo responsabilidades que não são minhas?</label>
-        <label><input type="checkbox"> Eu centralizo?</label>
-        <label><input type="checkbox"> Eu me sinto sobrecarregado?</label>
-        <label><input type="checkbox"> Eu acho que só eu faço direito?</label>
-      </div>
-    </div>
-
-    <!-- MERECIMENTO -->
-    <div class="card">
-      <h2>3️⃣ No Merecimento</h2>
-
-      <div class="fill-group">
-        <p>“Se eu ganhar mais dinheiro, então ______.”</p>
-        <input type="text" placeholder="Complete aqui..." />
+        <ul class="heroList" aria-label="Benefícios">
+          <li><span class="check" aria-hidden="true">✓</span><span><strong>Sem texto para digitar:</strong> apenas marcar opções.</span></li>
+          <li><span class="check" aria-hidden="true">✓</span><span><strong>Sem resultado automático:</strong> a devolutiva é feita por você no WhatsApp.</span></li>
+          <li><span class="check" aria-hidden="true">✓</span><span><strong>Envio só completo:</strong> o botão só libera quando tudo for marcado.</span></li>
+        </ul>
       </div>
 
-      <div class="fill-group">
-        <p>“Se eu cobrar mais caro, as pessoas vão ______.”</p>
-        <input type="text" placeholder="Complete aqui..." />
+      <aside class="heroCard" aria-label="Resumo">
+        <div style="font-weight:900;font-size:16px;margin-bottom:8px;">Você vai identificar:</div>
+        <ul class="heroList">
+          <li><span class="check" aria-hidden="true">✓</span><span>Padrões de <strong>doação excessiva</strong> e dificuldade de cobrar</span></li>
+          <li><span class="check" aria-hidden="true">✓</span><span>Comportamentos de <strong>centralização</strong> e sobrecarga na carreira</span></li>
+          <li><span class="check" aria-hidden="true">✓</span><span>Crenças de <strong>merecimento</strong> que travam prosperidade</span></li>
+        </ul>
+        <div class="divider"></div>
+        <div class="mini"><strong>Importante:</strong> este diagnóstico não substitui terapia/atendimento clínico. É uma ferramenta de reflexão e clareza.</div>
+      </aside>
+    </section>
+
+    <section class="section" id="como-funciona" aria-label="Como funciona">
+      <div class="formTitle">
+        <h2 class="h2">Como funciona</h2>
+        <span class="tag">3 passos simples</span>
       </div>
 
-      <div class="fill-group">
-        <p>“Eu só mereço prosperar quando ___.”</p>
-        <input type="text" placeholder="Complete aqui..." />
+      <div class="steps">
+        <div class="step">
+          <div class="stepNum">1</div>
+          <h3>Assinale todas as perguntas</h3>
+          <p>O formulário só pode ser enviado quando você marcar todos os itens obrigatórios.</p>
+        </div>
+        <div class="step">
+          <div class="stepNum">2</div>
+          <h3>Envie pelo WhatsApp</h3>
+          <p>Ao enviar, abre uma mensagem pronta com suas marcações para você me encaminhar.</p>
+        </div>
+        <div class="step">
+          <div class="stepNum">3</div>
+          <h3>Receba sua devolutiva</h3>
+          <p>Eu analiso e te entrego a leitura do seu padrão de troca — direto no WhatsApp.</p>
+        </div>
       </div>
+    </section>
 
-    </div>
+    <section class="section" id="diagnostico" aria-label="Formulário do Diagnóstico">
+      <div class="formTitle">
+        <h2 class="h2">Responda o Diagnóstico</h2>
+        <span class="tag">Somente assinalar</span>
+      </div>
+      <p class="p">Marque todas as opções abaixo. O envio só libera quando estiver completo.</p>
 
-    <div class="cta">
-      <a href="#" class="btn">Finalizar Reflexão</a>
-    </div>
+      <form id="diagForm">
+        <!-- 1) Dinheiro -->
+        <div class="fieldset">
+          <div class="legend">1️⃣ No dinheiro</div>
+
+          <div class="checklist">
+            <div class="item">
+              <input type="checkbox" id="d1" name="dinheiro" value="Entrego além do combinado" required>
+              <div>
+                <label for="d1">Eu entrego além do combinado?</label>
+                <div class="sub">Quando passa do combinado, sua energia fica “sem preço”.</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <input type="checkbox" id="d2" name="dinheiro" value="Tenho dificuldade de cobrar" required>
+              <div>
+                <label for="d2">Eu tenho dificuldade de cobrar?</label>
+                <div class="sub">Cobrar é sustentar valor, não pedir permissão.</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <input type="checkbox" id="d3" name="dinheiro" value="Dou desconto por insegurança" required>
+              <div>
+                <label for="d3">Eu dou desconto por insegurança?</label>
+                <div class="sub">Desconto por medo enfraquece seu posicionamento.</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <input type="checkbox" id="d4" name="dinheiro" value="Sinto culpa quando ganho bem" required>
+              <div>
+                <label for="d4">Eu me sinto culpado quando ganho bem?</label>
+                <div class="sub">Culpa pode virar “teto” de prosperidade.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2) Carreira -->
+        <div class="fieldset">
+          <div class="legend">2️⃣ Na carreira</div>
+
+          <div class="checklist">
+            <div class="item">
+              <input type="checkbox" id="c1" name="carreira" value="Assumo responsabilidades que não são minhas" required>
+              <div>
+                <label for="c1">Eu assumo responsabilidades que não são minhas?</label>
+                <div class="sub">Carregar o que não é seu vira sobrecarga e ressentimento.</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <input type="checkbox" id="c2" name="carreira" value="Centralizo" required>
+              <div>
+                <label for="c2">Eu centralizo?</label>
+                <div class="sub">Quando tudo depende de você, o custo é alto.</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <input type="checkbox" id="c3" name="carreira" value="Sinto-me sobrecarregado" required>
+              <div>
+                <label for="c3">Eu me sinto sobrecarregado?</label>
+                <div class="sub">Sinal de limite frágil ou acordos mal feitos.</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <input type="checkbox" id="c4" name="carreira" value="Acho que só eu faço direito" required>
+              <div>
+                <label for="c4">Eu acho que só eu faço direito?</label>
+                <div class="sub">Perfeccionismo pode esconder medo de confiar/delegar.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3) Merecimento (apenas assinalar) -->
+        <div class="fieldset">
+          <div class="legend">3️⃣ No merecimento (assinale 1 opção em cada)</div>
+
+          <div class="checklist">
+            <div class="item" style="flex-direction:column; align-items:stretch;">
+              <div style="font-weight:900;">Se eu ganhar mais dinheiro, então…</div>
+              <label class="item" style="margin-top:10px;">
+                <input type="radio" name="m1" value="Vou ter mais responsabilidade e cobrança" required>
+                <div>Vou ter mais responsabilidade e cobrança</div>
+              </label>
+              <label class="item">
+                <input type="radio" name="m1" value="Vão me invejar / me julgar" required>
+                <div>Vão me invejar / me julgar</div>
+              </label>
+              <label class="item">
+                <input type="radio" name="m1" value="Vou perder tempo, paz ou liberdade" required>
+                <div>Vou perder tempo, paz ou liberdade</div>
+              </label>
+              <label class="item">
+                <input type="radio" name="m1" value="Eu vou ter mais segurança e escolhas" required>
+                <div>Eu vou ter mais segurança e escolhas</div>
+              </label>
+            </div>
+
+            <div class="item" style="flex-direction:column; align-items:stretch;">
+              <div style="font-weight:900;">Se eu cobrar mais caro, as pessoas vão…</div>
+              <label class="item" style="margin-top:10px;">
+                <input type="radio" name="m2" value="Me abandonar / procurar mais barato" required>
+                <div>Me abandonar / procurar mais barato</div>
+              </label>
+              <label class="item">
+                <input type="radio" name="m2" value="Me criticar e dizer que não vale" required>
+                <div>Me criticar e dizer que não vale</div>
+              </label>
+              <label class="item">
+                <input type="radio" name="m2" value="Exigir perfeição e mais entrega" required>
+                <div>Exigir perfeição e mais entrega</div>
+              </label>
+              <label class="item">
+                <input type="radio" name="m2" value="Respeitar mais meu trabalho" required>
+                <div>Respeitar mais meu trabalho</div>
+              </label>
+            </div>
+
+            <div class="item" style="flex-direction:column; align-items:stretch;">
+              <div style="font-weight:900;">Eu só mereço prosperar quando…</div>
+              <label class="item" style="margin-top:10px;">
+                <input type="radio" name="m3" value="Eu sofrer e me sacrificar muito" required>
+                <div>Eu sofrer e me sacrificar muito</div>
+              </label>
+              <label class="item">
+                <input type="radio" name="m3" value="Eu fizer tudo perfeito / sem erros" required>
+                <div>Eu fizer tudo perfeito / sem erros</div>
+              </label>
+              <label class="item">
+                <input type="radio" name="m3" value="Todo mundo estiver bem antes de mim" required>
+                <div>Todo mundo estiver bem antes de mim</div>
+              </label>
+              <label class="item">
+                <input type="radio" name="m3" value="Eu reconhecer meu valor e sustentar limites" required>
+                <div>Eu reconhecer meu valor e sustentar limites</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="note">
+          ✅ Ao enviar, você <strong>não recebe resposta automática</strong>. Eu te retorno com a devolutiva no WhatsApp depois de analisar.
+        </div>
+
+        <div class="error" id="errorBox" role="alert" aria-live="polite">
+          Para enviar, marque <strong>todas</strong> as opções obrigatórias (incluindo 1 opção em cada pergunta de merecimento).
+        </div>
+
+        <div class="ctaRow" style="margin-top:14px;">
+          <button type="submit" class="btn btnPrimary" id="sendBtn">
+            Enviar para WhatsApp (receber devolutiva)
+          </button>
+          <a class="btn btnGhost" href="#como-funciona">Rever como funciona</a>
+        </div>
+      </form>
+    </section>
+
+    <section class="section" aria-label="Benefícios">
+      <div class="grid2">
+        <div>
+          <h2 class="h2">O que você ganha com isso</h2>
+          <p class="p">
+            Clareza sobre onde você está se excedendo, se diminuindo ou se sabotando — para ajustar acordos,
+            preço, limites e posicionamento com mais firmeza.
+          </p>
+          <p class="mini">
+            Você não precisa “se consertar”. Você precisa <strong>ver o padrão</strong> para escolher diferente.
+          </p>
+        </div>
+        <div class="heroCard">
+          <div style="font-weight:900;margin-bottom:10px;">Devolutiva no WhatsApp</div>
+          <div class="mini">Você envia suas marcações e eu te devolvo:</div>
+          <ul class="heroList" style="margin-top:10px;">
+            <li><span class="check" aria-hidden="true">✓</span><span>o padrão central que aparece</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span>o “custo oculto” na troca</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span>um próximo passo objetivo</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Chamada final">
+      <div class="grid2" style="align-items:center;">
+        <div>
+          <h2 class="h2">Pronto para ver o que está por trás?</h2>
+          <p class="p">Responda agora. O envio só funciona com tudo marcado — e a resposta vem com você no WhatsApp.</p>
+        </div>
+        <div class="ctaRow" style="justify-content:flex-end;">
+          <a class="btn btnPrimary" href="#diagnostico">Responder agora</a>
+        </div>
+      </div>
+    </section>
 
     <footer>
       © 2026 — Diagnóstico da Troca. Todos os direitos reservados.
     </footer>
+  </main>
 
+  <!-- Sticky WhatsApp CTA (mobile) -->
+  <div class="sticky" aria-label="Ação rápida">
+    <a class="btnWhats" href="#diagnostico">
+      <svg class="waIcon" viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M20.5 3.5A10 10 0 0 0 3.2 17.7L2 22l4.4-1.2A10 10 0 1 0 20.5 3.5Zm-8.4 2.2c4.1 0 7.4 3.3 7.4 7.4a7.4 7.4 0 0 1-10.1 6.8l-.3-.1-2.6.7.7-2.5-.1-.3a7.4 7.4 0 0 1 5-11.9Zm4.2 9.8c-.2.6-1.1 1-1.5 1.1-.4.1-.9.1-1.5 0s-1.5-.5-2.6-1.1c-1-.6-1.8-1.6-2.1-2.1-.3-.5-.5-1.3-.1-1.9.2-.3.5-.8.8-.8h.6c.1 0 .4-.1.6.5.2.6.8 2 .9 2.2.1.2.1.4 0 .6s-.2.4-.4.6c-.2.2-.4.4-.2.7.2.3.9 1.4 2.1 2 .9.5 1.6.6 1.9.4.3-.2.4-.5.6-.8.2-.3.5-.4.8-.3l1.9.9c.3.1.5.3.6.5Z"/></svg>
+      Começar diagnóstico
+    </a>
   </div>
 
+  <script>
+    // ====== CONFIGURE AQUI ======
+    const WHATSAPP_NUMBER = "SEU_NUMERO"; // Ex: "5549998110445"
+    // ============================
+
+    const form = document.getElementById('diagForm');
+    const errorBox = document.getElementById('errorBox');
+
+    function getCheckedValues(name){
+      return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(i => i.value);
+    }
+    function getRadioValue(name){
+      const el = document.querySelector(`input[name="${name}"]:checked`);
+      return el ? el.value : "";
+    }
+
+    function validateAllRequired(){
+      // checkboxes required (todos marcados): dinheiro 4 + carreira 4
+      const dinheiro = document.querySelectorAll('input[name="dinheiro"]');
+      const carreira  = document.querySelectorAll('input[name="carreira"]');
+
+      const allDinheiroChecked = Array.from(dinheiro).every(i => i.checked);
+      const allCarreiraChecked = Array.from(carreira).every(i => i.checked);
+
+      // radios required: m1, m2, m3 (1 em cada)
+      const m1 = !!getRadioValue('m1');
+      const m2 = !!getRadioValue('m2');
+      const m3 = !!getRadioValue('m3');
+
+      return allDinheiroChecked && allCarreiraChecked && m1 && m2 && m3;
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if(!validateAllRequired()){
+        errorBox.style.display = 'block';
+        errorBox.scrollIntoView({behavior:'smooth', block:'center'});
+        return;
+      }
+      errorBox.style.display = 'none';
+
+      const dinheiro = getCheckedValues('dinheiro');
+      const carreira = getCheckedValues('carreira');
+      const m1 = getRadioValue('m1');
+      const m2 = getRadioValue('m2');
+      const m3 = getRadioValue('m3');
+
+      const msg =
+`Olá! Preenchi o *Diagnóstico da Troca* e quero minha devolutiva.
+
+*1) No dinheiro (marquei todos):*
+- ${dinheiro.join('\n- ')}
+
+*2) Na carreira (marquei todos):*
+- ${carreira.join('\n- ')}
+
+*3) No merecimento (minhas escolhas):*
+- Se eu ganhar mais dinheiro, então: ${m1}
+- Se eu cobrar mais caro, as pessoas vão: ${m2}
+- Eu só mereço prosperar quando: ${m3}
+
+Pode me enviar a devolutiva, por favor?`;
+
+      const encoded = encodeURIComponent(msg);
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+      window.open(url, '_blank', 'noopener');
+    });
+  </script>
 </body>
 </html>
